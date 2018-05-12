@@ -1,3 +1,4 @@
+// @flow
 const getNearestSpace = (string, startingIndex) => {
   let rightDistance;
   let i = 0;
@@ -21,7 +22,7 @@ const getNearestSpace = (string, startingIndex) => {
   return Math.min(rightDistance || Infinity, leftDistance || Infinity);
 };
 
-const getMiddleIndex = string => {
+const getMiddleIndex = (string: string): number => {
   if (string.length <= 1) {
     return 0;
   }
