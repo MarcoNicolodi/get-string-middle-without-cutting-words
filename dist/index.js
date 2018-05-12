@@ -1,50 +1,45 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var getNearestSpace = function getNearestSpace(string, startingIndex) {
-  console.log("oiiii");
-  var stringArray = string;
-  var predicate = function predicate(subStr, index) {
-    return subStr === " " ? index : undefined;
-  };
+  var rightDistance = void 0;
+  var i = 0;
+  var subStr = string.substring(startingIndex);
+  while (rightDistance !== null && i <= string.length - 1 - startingIndex) {
+    if (subStr[i] === " ") {
+      rightDistance = startingIndex - i;
+    }
+    i += 1;
+  }
 
-  var distanceToRightSpace = string[startingIndex].map(predicate);
-  var distanceToLeftSpace = string.split("").reverse().join("")[string[startingIndex]].map(predicate);
-
-  return Math.min(distanceToLeftSpace[0], distanceToRightSpace[0]);
+  var leftDistance = void 0;
+  i = startingIndex;
+  subStr = string.substring(0, startingIndex);
+  while (leftDistance !== null && i >= 0) {
+    if (subStr[i] === " ") {
+      leftDistance = i;
+    }
+    i -= 1;
+  }
+  return Math.min(rightDistance || Infinity, leftDistance || Infinity);
 };
 
-// str = '1 34 47'
-// a1 = 'a '
-// b1 ='b c'
-
-// a2 = 'a b'
-// b2 ' c'
-
-// '12 456'
-
 var getMiddleIndex = function getMiddleIndex(string) {
-  var middleIndex = string.length / 2 - 1;
+  if (string.length <= 1) {
+    return 0;
+  }
+
+  var middleIndex = string.length / 2;
   var hasEvenLength = Number.isInteger(middleIndex);
-  console.log(middleIndex);
   if (hasEvenLength && string[middleIndex] === " ") return middleIndex;
 
   if (hasEvenLength) {
     return getNearestSpace(string, middleIndex);
   }
 
-  var stringArray = string.split("");
-
-  // if (!Number.isInteger(half)) {
-  //   if (string[Math.ceil(half)] === " ") {
-  //     return [
-  //       string.substring(0, Math.floor(half)),
-  //       string.substring(Math.floor(half), string.length)
-  //     ];
-  //   } else if (string[Math.floor(half)] === " ") {
-  //     return [
-  //       string.substring(0, Math.ceil(half)),
-  //       string.substring(Math.ceil(half), string.length)
-  //     ];
-  //   }
-  // }
+  return getNearestSpace(string, Math.ceil(middleIndex));
 };
+
+exports.default = getMiddleIndex;

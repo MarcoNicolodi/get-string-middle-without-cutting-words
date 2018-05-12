@@ -6,16 +6,9 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint src/*",
-    "compile": "babel --presets es2015 -d dist/ src/"
+    "compile": "babel --presets env -d dist/ src/"
   },
-  "keywords": [
-    "string",
-    "middle",
-    "index",
-    "cutting",
-    "word",
-    "words"
-  ],
+  "keywords": ["string", "middle", "index", "cutting", "word", "words"],
   "author": "Marco Nicolodi",
   "license": "MIT",
   "devDependencies": {
