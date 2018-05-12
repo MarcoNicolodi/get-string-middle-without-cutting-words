@@ -4,6 +4,7 @@ describe("module", () => {
   it("should workd", () => {
     expect(subject("123 56")).toEqual(3);
     expect(subject("12 456")).toEqual(2);
+    expect(subject("1 3")).toEqual(1);
     expect(subject("12 45 7")).toEqual(2);
     // 3 or 4 would be the same
     expect(subject("123 5 7")).toEqual(3);
