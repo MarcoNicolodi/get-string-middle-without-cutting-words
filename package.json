@@ -1,6 +1,6 @@
 {
   "name": "get-string-middle-index-without-cutting-words",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Gets the middle index of a string without cutting words",
   "main": "src/index.js",
   "scripts": {
@@ -11,6 +11,8 @@
   },
   "keywords": ["string", "middle", "index", "cutting", "word", "words"],
   "author": "Marco Nicolodi",
+  "homepage":
+    "https://github.com/MarcoNicolodi/get-string-middle-without-cutting-words",
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.26.0",
