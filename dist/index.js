@@ -23,7 +23,7 @@ var getNearestSpace = function getNearestSpace(string, startingIndex) {
     }
     i -= 1;
   }
-  return !rightDistance && !leftDistance ? 0 : Math.min(rightDistance || Infinity, leftDistance || Infinity);
+  return !rightDistance && !leftDistance ? -1 : Math.min(rightDistance || Infinity, leftDistance || Infinity);
 };
 
 var getMiddleIndex = function getMiddleIndex(string) {
@@ -32,7 +32,7 @@ var getMiddleIndex = function getMiddleIndex(string) {
   }
 
   if (string.length <= 1) {
-    return 0;
+    return -1;
   }
 
   var middleIndex = string.length / 2;

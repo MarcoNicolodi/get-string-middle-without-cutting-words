@@ -20,7 +20,7 @@ const getNearestSpace = (string, startingIndex) => {
     i -= 1;
   }
   return !rightDistance && !leftDistance
-    ? 0
+    ? -1
     : Math.min(rightDistance || Infinity, leftDistance || Infinity);
 };
 
@@ -30,7 +30,7 @@ const getMiddleIndex = (string: string): number => {
   }
 
   if (string.length <= 1) {
-    return 0;
+    return -1;
   }
 
   const middleIndex = string.length / 2;

@@ -23,8 +23,10 @@ getMiddleIndex("123 5 7");
 // => 3
 getMiddleIndex("12 4 67");
 // => 2
-getMiddleIndex("a");
-// => 0
+getMiddleIndex("123");
+// => cant cut, so returns -1
 getMiddleIndex("");
-// => 0
+// => -1
+getMiddleIndex(null);
+// throws if argument is not a string
 ```
