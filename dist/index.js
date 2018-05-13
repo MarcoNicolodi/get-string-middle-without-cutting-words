@@ -23,10 +23,14 @@ var getNearestSpace = function getNearestSpace(string, startingIndex) {
     }
     i -= 1;
   }
-  return Math.min(rightDistance || Infinity, leftDistance || Infinity);
+  return !rightDistance && !leftDistance ? 0 : Math.min(rightDistance || Infinity, leftDistance || Infinity);
 };
 
 var getMiddleIndex = function getMiddleIndex(string) {
+  if (typeof string !== "string") {
+    throw new Error("Argument must be a string");
+  }
+
   if (string.length <= 1) {
     return 0;
   }
