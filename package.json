@@ -9,10 +9,16 @@
     "build": "babel -d dist/ src/ --ignore '**/*.test.js'",
     "prepublish": "npm run build"
   },
-  "keywords": ["string", "middle", "index", "cutting", "word", "words"],
+  "keywords": [
+    "string",
+    "middle",
+    "index",
+    "cutting",
+    "word",
+    "words"
+  ],
   "author": "Marco Nicolodi",
-  "homepage":
-    "https://github.com/MarcoNicolodi/get-string-middle-without-cutting-words",
+  "homepage": "https://github.com/MarcoNicolodi/get-string-middle-without-cutting-words",
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.26.0",

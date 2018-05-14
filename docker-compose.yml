@@ -1,0 +1,9 @@
+version: '2'
+services:
+  get-middle-index:
+    image: node:8.9.0
+    working_dir: /home/package
+    volumes: 
+      - ./:/home/package
+    command: npm install
+

@@ -30,3 +30,9 @@ getMiddleIndex("");
 getMiddleIndex(null);
 // throws if argument is not a string
 ```
+
+## Run with docker
+
+```bash
+$ docker-compose run get-middle-index sh
+```
